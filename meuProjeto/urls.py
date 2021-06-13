@@ -27,6 +27,7 @@ from remedio.views import *
 
 urlpatterns = [
     path('', home),
+    path('pedidos/', pedidos),
     path('areaRestrita/', areaRestrita),
     path('areaRestrita/remedio/', cadastrarRemedio),
     path('areaRestrita/remedio/alterar/<int:id>', editarRemedio),  
