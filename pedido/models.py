@@ -4,8 +4,8 @@ from clientes.models import Cliente;
 
 # Create your models here.
 class Pedido(models.Model):
-    remedio = models.OneToOneField(Remedio, on_delete=models.CASCADE)
-    cliente = models.OneToOneField(Cliente, on_delete=models.CASCADE)
+    remedio = models.ForeignKey(Remedio, on_delete=models.CASCADE,null=True)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE,null=True)
     quantidade = models.IntegerField(null=False)
     valor = models.FloatField(null=False)
     status = models.CharField(max_length=1, default='P', help_text='P - Pendente, C - Cancelado - F - Finalizado')

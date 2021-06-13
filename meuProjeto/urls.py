@@ -21,6 +21,7 @@ from .views import *
 from django.urls import include
 from clientes.views import *
 from remedio.views import *
+from pedido.views import *
 
 
 #so temos a pagina admin por hora
@@ -28,6 +29,8 @@ from remedio.views import *
 urlpatterns = [
     path('', home),
     path('pedidos/', pedidos),
+    path('comprar/<int:id>', comprarRemedio),  
+    path('efetivarPedido', efetivarPedido),
     path('areaRestrita/', areaRestrita),
     path('areaRestrita/remedio/', cadastrarRemedio),
     path('areaRestrita/remedio/alterar/<int:id>', editarRemedio),  

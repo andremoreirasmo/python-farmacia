@@ -22,3 +22,8 @@ def areaRestrita(request):
 def pedidos(request):    
     pedidos = Pedido.objects.filter(cliente__user__id=request.user.id)
     return render(request, 'pedidos.html', {'pedidos': pedidos})
+
+@user_passes_test(lambda u:u.is_authenticated, login_url='/accounts/login/')
+def comprarRemedio(request, id):
+    remedio = Remedio.objects.get(id=id) 
+    return render(request, 'comprar_remedio.html', {'remedio': remedio})
