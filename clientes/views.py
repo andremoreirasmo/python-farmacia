@@ -8,14 +8,14 @@ from django.http import HttpResponseRedirect
 
 class Cadastrar(View):
     def get(self, *args, **kwargs):
-        return render(self.request, 'cadastrar.html')
+        return render(self.request, 'cadastrar_usuario.html')
     
     def post(self, *args, **kwargs):
       try:
         usuario_aux = User.objects.get(email=self.request.POST['email'])
 
         if usuario_aux:
-            return render(self.request, 'cadastrar.html', {'msg': 'Já existe um usuário com o mesmo e-mail'})
+            return render(self.request, 'cadastrar_usuario.html', {'msg': 'Já existe um usuário com o mesmo e-mail'})
           
       except User.DoesNotExist:        
         usuario = self.request.POST['usuario']
