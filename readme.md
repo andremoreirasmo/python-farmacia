@@ -1,4 +1,5 @@
-# python-farmacia
+#Projeto Pizzaria
+Projeto pizzaria simples feito em Django.
 
 #Criar env
 python3 -m venv env
@@ -7,10 +8,7 @@ python3 -m venv env
 python3 manage.py createsuperuser
 
 #criar app
-from django.db import models
-
-# Create your models here.
- <nomedoapp>
+django-admin startapp <nomedoapp>
 
 #Rodar server
 python3 manage.py runserver
