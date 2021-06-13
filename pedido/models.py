@@ -11,6 +11,7 @@ class Pedido(models.Model):
     status = models.CharField(max_length=1, default='P', help_text='P - Pendente, C - Cancelado - F - Finalizado')
     endereco = models.TextField(max_length=200)
     receita = models.ImageField(upload_to='media')
+    dataEntraga = models.DateField(null=True)
 
     def __str__(self):
         return 'Pedido'

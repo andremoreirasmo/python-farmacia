@@ -36,6 +36,7 @@ urlpatterns = [
     path('areaRestrita/remedio/alterar/<int:id>', editarRemedio),  
     path('areaRestrita/remedio/alterar/salvar/<int:id>', alterarRemedio),  
     path('areaRestrita/remedio/excluir/<int:id>', deletarRemedio),
+    path('areaRestrita/alterarPedido/<int:id>', alterarPedido),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls'), name='accounts'),
     path('cadastrar/', Cadastrar.as_view(), name='cadastrar')
